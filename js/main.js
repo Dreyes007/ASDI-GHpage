@@ -35,7 +35,7 @@ $('#home').on('pageinit', function (){
 		});
 		
 	});
-	
+				
 	//Store Data Function
 	$('#schedule').on('pageinit', function (e){
 		console.log("Schedule Page Loaded!!");
