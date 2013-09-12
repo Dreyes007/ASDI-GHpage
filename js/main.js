@@ -5,6 +5,37 @@
 $('#home').on('pageinit', function (){
 	console.log("Main Page Loaded!!");
 	
+	
+	//Loads JSON Data
+	$('#loadData').on('pageinit', function (){
+		
+		$.ajax({
+			url: "xhr/JSON.php",
+			type: "GET",
+			dataType: "json",
+			success: function(response){
+				for(var i=0, j=response.schedule.length; i<j; i++){
+					var sched = response.schedule[i];
+					$(''+
+						'<div class="data">'+
+							
+							'<p><strong>'+ "First Name:"+ '<br />'+ sched.fname +'</strong></p>'+
+							'<p><strong>'+ "Last Name:"+ '<br />'+ sched.lname +'</strong></p>'+							
+							'<p><strong>'+ "Date:"+ '<br />'+ sched.date +'</strong></p>'+
+							'<p><strong>'+ "Position:"+ '<br />'+ sched.position +'</strong></p>'+
+							'<p><strong>'+ "Hours:"+ '<br />'+ sched.hours +'</strong></p>'+
+							'<p><strong>'+ "Break:"+ '<br />'+ sched.break +'</strong></p>'+
+						'</div>'
+					).appendTo('#loadData');
+					
+				};
+
+			}
+			
+		});
+		
+	});
+	
 	//Store Data Function
 	$('#schedule').on('pageinit', function (e){
 		console.log("Schedule Page Loaded!!");
@@ -132,9 +163,6 @@ $('#home').on('pageinit', function (){
 		});
 	
 	});
-	
-	
-	
-	
-	
+		
 });
+
