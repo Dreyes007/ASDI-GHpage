@@ -4,12 +4,12 @@
 	
 		<item>	
 		
-			<location>W.Melbourne</location>
-			<name>Daniel</name>
+			<fname>W.Melbourne</fname>
+			<lname>Daniel</lname>
 			<date>05/31/2013</date>
-			<temp>Optimal</temp>
-			<degree>31</degree>
-			<expired>No</expired>
+			<position>Optimal</position>
+			<hours>31</hours>
+			<break>No</break>
 		
 		</item>
 		

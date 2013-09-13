@@ -35,6 +35,30 @@ $('#home').on('pageinit', function (){
 		});
 		
 	});
+	
+	//Loads XML Data
+	$('#loadXml').on('pageinit', function (){
+		console.log("XML Page Loaded!!");
+		
+		var xml = $.parseXML(xhr/info.php),
+		$xml = $( xml ),
+		$fname = $xml.find('fname');
+		
+		console.log($fname.text());
+		
+		/*$.ajax({
+			url: "xhr/info.php",
+			type: "GET",
+			success: function(data){
+				var xml_node = $('items', data);
+				console.log( xml_node.find('item > fname').text() );
+				
+			},
+			
+		});*/
+		
+		
+	});
 				
 	//Store Data Function
 	$('#schedule').on('pageinit', function (e){
