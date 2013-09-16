@@ -40,22 +40,31 @@ $('#home').on('pageinit', function (){
 	$('#loadXml').on('pageinit', function (){
 		console.log("XML Page Loaded!!");
 		
-		var xml = $.parseXML(xhr/info.php),
-		$xml = $( xml ),
-		$fname = $xml.find('fname');
 		
-		console.log($fname.text());
-		
-		/*$.ajax({
+		$.ajax({
 			url: "xhr/info.php",
 			type: "GET",
 			success: function(data){
-				var xml_node = $('items', data);
-				console.log( xml_node.find('item > fname').text() );
+				var node = $('items', data);			
+				//console.log(node.find('item > fname').text() );
+				var fname = (node.find('item > fname').text() );
+				var lname = (node.find('item > lname').text() );
+				var date = (node.find('item > date').text() );
+				var spot = (node.find('item > spot').text() );
+				var brake = (node.find('item > break').text() );
+				$(''+
+					'<div class="data">'+
+						'<p>'+ "First Name:"+ fname +'</P>'+
+						'<p>'+ "Last Name:"+ lname +'</p>'+
+						'<p>'+ "Date:"+ date +'</p>'+
+						'<p>'+ "Position:"+ spot +'</p>'+
+						'<p>'+ "Break:"+ brake +'</p>'+
+					'</div>'
+					).appendTo('#loadXml');
 				
 			},
 			
-		});*/
+		});
 		
 		
 	});
