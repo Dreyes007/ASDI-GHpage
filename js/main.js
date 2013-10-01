@@ -34,7 +34,7 @@ $('#home').on('pageinit', function (){
 			
 		});
 		
-	});
+	});//End of Json Data page
 	
 	//Loads XML Data
 	$('#loadXml').on('pageinit', function (){
